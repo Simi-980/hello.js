@@ -4,8 +4,15 @@ const port = 3000;
 
 app.use(express.json()); 
 
-app.post('/echo', (req, res) => { 
-    res.json({ echoed: req.body }); // Means that the req.body is nw available 
+app.post('/', (req, res) => { 
+    console.log(req.body);
+    res.json({ echoed: req.body });
+
+});
+
+app.get("/user/:id", (req, res) =>{
+    const id = req.params.id 
+    res.send("User[id]profile");
 });
 
 app.get('/', (req, res) => {
