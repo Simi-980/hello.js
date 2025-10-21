@@ -11,7 +11,8 @@ app.post('/', (req, res) => {
 });
 
 app.get("/user/:id", (req, res) =>{
-    const id = req.params.id 
+    const id = req.params.id;
+    console.log(id);
     res.send("User[id]profile");
 });
 
