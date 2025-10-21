@@ -17,15 +17,13 @@ app.post('/', (req, res) => {
 
     app.post("/user", (req, res) => {
         const { name, email } = req.body; 
-        if (name) return res.status(400).send("Name required!");
-        res.json({ message: 'Hello, $[name]! Your $[email]'});
+        if (!name || !email) return res.status(400).json ({ error: "Missing fields"});
+        res.status(201).json({ message: `Registered: ${name} (${email})` });
     });
 });
 
 app.get("/user/:id", (req, res) =>{
-    const userid = req.params.id;
-    console.log(id);
-    res.send('User[id]profile: ${userid}');
+    res.json({ id: req.params.id, name: 'User [id] profile'});
 });
 
 app.get("/search", (req, res) => {
