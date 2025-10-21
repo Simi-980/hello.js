@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.use(express.json()); // Middleware
+app.use(express.json()); 
 
-app.post('/echo', (req, res) => { // Post Route
+app.post('/echo', (req, res) => { 
     res.json({ echoed: req.body }); // Means that the req.body is nw available 
 });
 
