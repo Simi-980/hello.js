@@ -17,7 +17,7 @@ app.post('/', (req, res) => {
 
     app.post("/user", (req, res) => {
         const { name, email } = req.body; 
-        if (!name || !email) return res.status(400).json ({ error: "Missing fields"});
+        if (!name || !email) return res.status(400).json ({ error: "Missing data"});
         res.status(201).json({ message: `Registered: ${name} (${email})` });
     });
 });
